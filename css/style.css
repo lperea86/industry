@@ -60,15 +60,15 @@ nav{
    text-decoration: none;   
 }
 
-.menu_principal .menu a{
-   color: black;
+.menu a{
+   color: red;
    text-decoration: none;
    font-weight: bolder;
 }
-
-.menu_principal .menu:hover .submenu a{
+.menu:hover .submenu{
    display: flex;
    flex-direction: column;
+   color:black
 }
 
 
