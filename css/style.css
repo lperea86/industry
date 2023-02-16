@@ -36,6 +36,12 @@
 
 }
 
+.symbol_industry{
+   display: none;
+   margin: 20px;
+
+}
+
 .socialbar {
    width: 50px;
    height: 50px;
@@ -133,14 +139,24 @@
 
 @media only screen and (max-width: 650px) {
 
-   .logo_industry img {
-      background-image: url(../assets/img/symbol_ind.png
-);
-      background-repeat: no-repeat;
-      
-   }
+   .logo_industry {
+display: none;
+}
+.symbol_industry{
+   display: block;
+   margin-top: 30%;
 
 }
+
+.socialbar{
+   display: flex;
+   margin-left: 25%;
+   text-align: center;
+   justify-content: center ;
+
+   ;
+}
+
 
 .area1 {
    grid-area: area1;
