@@ -143,19 +143,13 @@
 display: none;
 }
 .symbol_industry{
-   display: block;
-   margin-top: 30%;
+   display:inline-flex;
+   margin-top: 15%;
 
 }
 
-.socialbar{
-   display: flex;
-   margin-left: 25%;
-   text-align: center;
-   justify-content: center ;
-
-   ;
 }
+
 
 
 .area1 {
