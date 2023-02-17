@@ -144,7 +144,7 @@ display: none;
 }
 .symbol_industry{
    display:inline-flex;
-   margin-top: 15%;
+   margin:0%;
 
 }
 
@@ -154,6 +154,29 @@ display: none;
 
 .area1 {
    grid-area: area1;
+
+   .slider{
+      margin: auto;
+      overflow: hidden;
+   }
+
+   .slider ul{
+      display: flex;
+      padding: 0;
+      width: 400%;
+   }
+
+   .slider li{
+      width: 100%;
+      list-style: none;  
+   }
+
+   .slider li img{
+      width: 100%;
+      display: flex;
+   }
+
+
 }
 
 .area2 {
