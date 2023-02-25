@@ -33,9 +33,9 @@ rel="stylesheet"
   <h1>Giftcard</h1>
   <header class="header">
     <div class="socialbar">
-      <a href="#"><img src="../assets/img/icon/facebook2.png" alt="Facebook"></a>
-      <a href="#"><img src="../assets/img/icon/instagram2.png" alt="Instagram"></a>
-      <a href="#"><img src="../assets/img/icon/whatsapp2.png" alt="Whatsapp"></a>
+      <a href="#" target="_blank"><img src="../assets/img/icon/facebook2.png" alt="Facebook"></a>
+      <a href="#" target="_blank"><img src="../assets/img/icon/instagram2.png" alt="Instagram"></a>
+      <a href="#" target="_blank"><img src="../assets/img/icon/whatsapp2.png" alt="Whatsapp"></a>
     </div>
     <div>
       <a href="../index.html"><img class="logo_industry" src="../assets/img/industryNC2.png" alt="symbol industry"></a>
@@ -54,8 +54,40 @@ rel="stylesheet"
     <li class="menu"><a href="./giftcard.html">Giftcard</a></li>
     </ul>
   </header>
-  <main>
+  <main class="container">
+    <form>
+      <div class="form-row">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="De">
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Para">
+        </div>
+      </div>
+    </form>
+
+    <form>
+      <div class="form-group row">
+        <label for="colFormLabel" class="col-sm-2 col-form-label d-flex">Email destinatario </label>
+        <div class="col-sm-5">
+          <input type="email" class="toForm d-flex" id="toForm" placeholder="">
+        </div>
+      </div>
+    </form>
+    <form class="was-validated">
+      <div class="mb-3">
+        <label for="">Escriba un mensaje para el destinatario</label>
+        <textarea class="form-control" id="" placeholder="" required></textarea>
+      </div>  
+      <label class="card-quantity" for="light-weigth"></label>
+      <input type="number" id="card-quantity" class="numbers_only light-weigth" />
+      </div>
+    
+    </form>
+
   </main>
+
+
   <footer class=" footer text-center text-lg-start bg-white text-muted">
     <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
       <div class="me-5 d-none d-lg-block">
