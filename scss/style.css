@@ -18,7 +18,6 @@
   height: 0.1fr;
   text-align: center;
   background-color: white;
-  font-family: "Montserrat", sans-serif;
   font-family: "Roboto", sans-serif;
 }
 
@@ -60,9 +59,10 @@
   background-color: blue;
 }
 
-footer {
+.footer fas fa-gem me-3 text-secondary p {
   grid-area: footer;
   background-color: aqua;
+  font-family: "Roboto", sans-serif;
 }
 
 .logo_industry {
@@ -265,11 +265,6 @@ footer {
   grid-area: area2;
 }
 
-.footer {
-  grid-area: footer;
-  color: rgb(168, 16, 16);
-}
-
 .btn-group {
   font-family: "Roboto", sans-serif;
   padding: auto;
@@ -321,7 +316,4 @@ footer {
   100% {
     text-shadow: 4px -4px 0 #da0641, 3px -3px 0 #da0641, 2px -2px 0 #da0641, 1px -1px 0 #da0641, -4px 4px 0 #13f1fc, -3px 3px 0 #13f1fc, -2px 2px 0 #13f1fc, -1px 1px 0 #13f1fc;
   }
-}
-.h2 {
-  color: blue;
 }/*# sourceMappingURL=style.css.map */
