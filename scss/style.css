@@ -54,6 +54,16 @@
   background-color: orange;
 }
 
+.carousel-caption {
+  background-color: rgba(247, 56, 56, 0.103);
+  height: 100%;
+  left: 0;
+  top: 0;
+  padding: 50px;
+  text-align: left;
+  width: 340px;
+}
+
 .area2 {
   grid-area: area2;
   background-color: blue;
