@@ -6,56 +6,61 @@ function obtenerProductos() {
         { id: 4, nombre: "Short de baño estampado", codigo: "h1", color: "0", talle: "S", categoria: "kids", stock: 2, precio: 5000, precio_lista: "6000", rutaImagen: "./assets/img/kids4.jpg" },
         { id: 5, nombre: "Camisa M/C Flower", codigo: "h1", color: "3", talle: "S", categoria: "kids", stock: 2, precio: 5000, precio_lista: "6000", rutaImagen: "./assets/img/kids5.jpg" },
         { id: 6, nombre: "Short de baño liso", codigo: "h1", color: "1", talle: "S", categoria: "kids", stock: 2, precio: 5000, precio_lista: "6000", rutaImagen: "./assets/img/men2.jpg" }
-    ]
+    ];
 }
 
-
-
 function principal() {
-    let productos = obtenerProductos()
-    renderizarProductos(productos)
-    //renderizarCarrito()
+    let productos = obtenerProductos();
+    renderizarProductos(productos);
 }
 
 principal()
 
-
-
-
 function renderizarProductos(productos) {
     let contenedor = document.getElementById("card-group")
     contenedor.innerHTML = ""
-    productos.forEach(({ rutaImagen, nombre, precio_lista, stock, id }) => {
 
+    productos.forEach(({ rutaImagen, nombre, precio_lista, stock, id }) => {
         let tarjetaProd = document.createElement("div")
         tarjetaProd.className = "card"
 
         tarjetaProd.innerHTML = `
-                <img src="${rutaImagen}" class="card-img-top" alt="..."/>
-                <div class="card-body">
-                    <h5 class="card-title">${nombre}</h5>
-                    <p class="card-text">Descripcion de producto</p>
-                    <p>${precio_lista}</p>
-                    <p>Quedan ${stock} unidades</p>
-                    <button class="comprar" id="${id}">Agregar al carrito</button>
-                    <small class="text-muted">Last updated 3 mins ago</small>
-                </div>
-            `
+            <img src="${rutaImagen}" class="card-img-top" alt="..."/>
+            <div class="card-body">
+                <h5 class="card-title">${nombre}</h5>
+                <p class="card-text">Descripcion de producto</p>
+                <p>$${precio_lista}</p>
+                <p>Quedan ${stock} unidades</p>
+                <button class="comprar" data-id="${id}">Agregar al carrito</button>
+            </div>
+        `
 
-        contenedor.append(tarjetaProd)
-        //let botonAgregarAlCarrito = tarjetaProd.document.querySelectorAll(".comprar")
-        //botonAgregarAlCarrito.addEventListener("click", agregarAlCarrito);
+        contenedor.appendChild(tarjetaProd)
+    })
+
+    contenedor.addEventListener("click", (event) => {
+        if (event.target.classList.contains("comprar")) {
+            let productId = parseInt(event.target.getAttribute("data-id"))
+            agregarAlCarrito(productId)
+        }
     })
 }
 
+function obtenerCarrito() {
+   return localStorage.getItem("carrito") ? JSON.parse(localStorage.getItem("carrito")) : []
+}
 
-//function obtenerCarrito() {
-//    return localStorage.getItem("carrito") ? JSON.parse(localStorage.getItem("carrito")) : []
-//}
-//let botonComprar = document.getElementsByClassName("comprar")
-//botonComprar.addEventListener("click", finalizarCompra)
+function agregarAlCarrito(productId) {
+    let carrito = obtenerCarrito()
+    carrito.push(productId)
+    localStorage.setItem("carrito", JSON.stringify(carrito))
+    Swal.fire("Se agregó el producto al carrito correctamente!")
+}
 
-
+let botonesComprar = document.querySelectorAll(".comprar")
+botonesComprar.forEach(boton => {
+    boton.addEventListener("click")
+})
 
 
 function finalizarCompra() {
@@ -63,6 +68,3 @@ function finalizarCompra() {
     localStorage.removeItem("carrito")
     renderizarCarrito()
 }
-
-
-
